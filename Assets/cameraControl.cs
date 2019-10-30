@@ -9,7 +9,7 @@ public class cameraControl : MonoBehaviour {
 
     void Start()
     {
-        
+        this.transform.position = GameController.GetCameraStartPos(); 
         targetObj = GameObject.Find("unitychan");
         targetPos = targetObj.transform.position;
         
@@ -34,10 +34,7 @@ public class cameraControl : MonoBehaviour {
             transform.RotateAround(targetPos, transform.right, mouseInputY * Time.deltaTime * 200f);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            this.transform.position = new Vector3(targetPos.x+0.2f, targetPos.y + 1.25f, targetPos.z);
-        }
+        
 
             
 
